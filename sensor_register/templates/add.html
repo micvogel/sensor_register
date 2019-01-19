@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<form method="POST" action="{{url_for('home')}}">
+    {{form.csrf_token}}
+    {{form.mac.label}}
+    {{form.mac}}
+    {{form.uuid.label}}
+    {{form.uuid}}
+    {{form.location.label}}
+    {{form.location}}
+    {{form.target.label}}
+    {{form.target}}
+    {{form.submit(class="btn btn-outline-info")}}
+</form>
+{% endblock %}
