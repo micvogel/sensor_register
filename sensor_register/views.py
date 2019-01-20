@@ -23,9 +23,10 @@ def home():
     return render_template('home.html', table=table)
 
 @app.route('/add', methods=['GET', 'POST'])
-def addsensor():
+def add():
     form = SensorsForm()
 
     if form.validate_on_submit():
+
         return redirect(url_for('home'))
     return render_template('add.html', form=form)
